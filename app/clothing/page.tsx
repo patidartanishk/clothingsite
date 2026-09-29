@@ -1,14 +1,12 @@
 ﻿"use client";
 
-import React, { useState, useMemo } from "react";
+import React from "react";
 
 import Image from "next/image";
 
 import { motion } from "framer-motion";
 
 import "@/styles/clothing.css";
-
-import ProductFilters from "@/components/ProductFilters";
 
 import ProductGrid from "@/components/ProductGrid";
 
@@ -18,41 +16,13 @@ import MapSection from "@/components/MapSection";
 
 import { CLOTHING_PRODUCTS } from "@/data/products";
 
-const FILTERS = [
-  "ALL",
-  "SHIRTS",
-  "T-SHIRTS",
-  "JEANS",
-  "TROUSERS",
-  "HOODIES",
-  "JACKETS",
-];
-
 export default function ClothingPage() {
-  const [activeFilter, setActiveFilter] = useState("ALL");
-
-  const filteredProducts = useMemo(() => {
-    if (activeFilter === "ALL") {
-      return CLOTHING_PRODUCTS;
-    }
-
-    const filterKey = activeFilter.toLowerCase();
-
-    return CLOTHING_PRODUCTS.filter(
-      (p) => p.subcategory.toLowerCase() === filterKey
-    );
-  }, [activeFilter]);
-
   return (
     <div className="clothing-page">
-
       {/* Clothing Hero */}
-
       <section className="category-page-hero">
         <div className="container">
-
           <div className="category-hero-grid">
-
             <motion.div
               className="category-hero-text"
               initial={{
@@ -98,7 +68,7 @@ export default function ClothingPage() {
               }}
             >
               <Image
-                src="/assets/clothing/hero-clothing.jpg"
+                src="/assets/categories/clothings.png"
                 alt="Men's Clothing Collection - Akhilesh Collection"
                 fill
                 priority
@@ -108,54 +78,40 @@ export default function ClothingPage() {
                 }}
               />
             </motion.div>
-
           </div>
         </div>
       </section>
 
-      {/* Category Filters */}
-
-      <ProductFilters
-        categories={FILTERS}
-        activeCategory={activeFilter}
-        onSelectCategory={setActiveFilter}
-        totalCount={filteredProducts.length}
-      />
-
-      {/* Product Content */}
-
+      {/* Clothing Product Grid */}
       <section
         className="container catalog-section"
         aria-label="Clothing Products"
       >
         <div className="catalog-count-row">
           <span>
-            Showing {filteredProducts.length}{" "}
-            {filteredProducts.length === 1
+            Showing {CLOTHING_PRODUCTS.length}{" "}
+            {CLOTHING_PRODUCTS.length === 1
               ? "Style"
               : "Styles"}
           </span>
 
           <span>
-            Category: {activeFilter}
+            Clothing Collection
           </span>
         </div>
 
         <ProductGrid
-          products={filteredProducts}
+          products={CLOTHING_PRODUCTS}
           gridClassName="catalog-grid"
           imageOnly={true}
         />
       </section>
 
       {/* About / Shop Information */}
-
       <AboutStore />
 
       {/* Google Map */}
-
       <MapSection />
-
     </div>
   );
 }

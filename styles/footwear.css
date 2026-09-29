@@ -1,9 +1,15 @@
-﻿/* styles/footwear.css */
+﻿/* =========================================================
+   AKHILESH COLLECTION — FOOTWEAR PAGE
+   ========================================================= */
+
+/* =========================
+   FOOTWEAR HERO
+   ========================= */
 
 .footwear-page-hero {
   position: relative;
   min-height: 380px;
-  background-color: #F7F4EE;
+  background-color: #f7f4ee;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -59,57 +65,11 @@
   object-fit: cover;
 }
 
-/* Footwear Filters */
-.footwear-filter-bar {
-  position: sticky;
-  top: 76px;
-  z-index: 20;
-  background: rgba(250, 248, 244, 0.94);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-light);
-  padding: 16px 0;
-  margin-bottom: 40px;
-}
 
-.footwear-filter-pills {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-  scrollbar-width: none;
-}
+/* =========================
+   FOOTWEAR PRODUCT GRID
+   ========================= */
 
-.footwear-filter-pills::-webkit-scrollbar {
-  display: none;
-}
-
-.footwear-pill {
-  position: relative;
-  padding: 9px 20px;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  background: transparent;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  transition: var(--transition-smooth);
-}
-
-.footwear-pill:hover {
-  color: var(--text-primary);
-  background: rgba(17, 17, 17, 0.04);
-}
-
-.footwear-pill.active {
-  color: #FFFFFF;
-  background-color: var(--text-primary);
-}
-
-/* Footwear Product Grid */
 .footwear-catalog-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -128,5 +88,98 @@
   .footwear-catalog-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 28px;
+  }
+}
+
+
+/* =========================
+   IMAGE-ONLY PRODUCT CARDS
+   ========================= */
+
+.catalog-grid-image-only {
+  align-items: stretch;
+}
+
+.catalog-image-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+}
+
+.catalog-image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.catalog-image-box img {
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.catalog-image-card:hover .catalog-image-box img {
+  transform: scale(1.03);
+}
+
+
+/* =========================
+   CATALOG COUNT
+   ========================= */
+
+.catalog-section {
+  padding-top: 50px;
+}
+
+.catalog-count-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 767px) {
+  .footwear-page-hero {
+    min-height: auto;
+    padding: 50px 0 40px;
+  }
+
+  .footwear-hero-grid {
+    gap: 28px;
+  }
+
+  .footwear-hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .footwear-hero-image-box {
+    height: 240px;
+  }
+
+  .catalog-section {
+    padding-top: 40px;
+  }
+
+  .catalog-count-row {
+    margin-bottom: 24px;
+  }
+
+  .footwear-catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 60px;
   }
 }

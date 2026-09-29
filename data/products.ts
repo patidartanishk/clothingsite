@@ -13,12 +13,12 @@
 export const STORE_INFO = {
   name: "AKHILESH COLLECTION",
   subtitle: "Ready-Made Garments & Footwear Shop",
-  location: "Main Market, Subheda, Barwahi",
+  location: "Main Market, Subheda,Barabanki",
   phonePrimary: "7007406127",
   phoneSecondary: "9956690680",
   whatsappNumber: "7007406127",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Main+Market+Subheda+Barwahi",
-  openingNote: "Visit our showroom at Main Market, Subheda, Barwahi to experience the complete collection in person."
+  openingNote: "Visit our showroom at Main Market, Subheda,Barabanki to experience the complete collection in person."
 };
 
 export const getWhatsAppLink = (productName?: string) => {
@@ -34,7 +34,7 @@ export const CLOTHING_PRODUCTS: Product[] = [
     name: "Classic White Oxford Shirt",
     category: "clothing",
     subcategory: "shirts",
-    image: "/assets/clothing/shirt-1.jpg",
+    image: "/assets/clothing/s1.png",
     description: "Tailored from 100% premium long-staple cotton, featuring a structured button-down collar and mother-of-pearl buttons. Ideal for office or smart-casual occasions.",
     tags: ["Cotton", "Formal", "Breathable"],
     isNewArrival: true,
@@ -45,7 +45,7 @@ export const CLOTHING_PRODUCTS: Product[] = [
     name: "Beige Linen Resort Shirt",
     category: "clothing",
     subcategory: "shirts",
-    image: "/assets/clothing/shirt-2.jpg",
+    image: "/assets/clothing/s2.png",
     description: "Breathable pure linen construction with a relaxed camp collar. Designed for warm-weather elegance and comfortable daily wear.",
     tags: ["Pure Linen", "Summer", "Casual"],
     isNewArrival: true
@@ -55,7 +55,7 @@ export const CLOTHING_PRODUCTS: Product[] = [
     name: "Olive Corduroy Overshirt",
     category: "clothing",
     subcategory: "shirts",
-    image: "/assets/clothing/shirt-3.jpg",
+    image: "/assets/clothing/s3.png",
     description: "Textured fine-wale corduroy with dual chest flap pockets. Perfect for layering over tees during seasonal transitions.",
     tags: ["Corduroy", "Layering", "Vintage"],
     isFeatured: true
@@ -65,7 +65,7 @@ export const CLOTHING_PRODUCTS: Product[] = [
     name: "Heavyweight Minimal Black Tee",
     category: "clothing",
     subcategory: "t-shirts",
-    image: "/assets/clothing/tshirt-1.jpg",
+    image: "/assets/clothing/s4.png",
     description: "Crafted from 240 GSM organic combed cotton with a ribbed collar that retains shape wash after wash.",
     tags: ["240 GSM", "Minimalist", "Oversized"],
     isNewArrival: true
@@ -75,7 +75,7 @@ export const CLOTHING_PRODUCTS: Product[] = [
     name: "Organic Off-White Ribbed Tee",
     category: "clothing",
     subcategory: "t-shirts",
-    image: "/assets/clothing/tshirt-2.jpg",
+    image: "/assets/clothing/s5.png",
     description: "Ultra-soft micro-ribbed crewneck t-shirt with a modern boxy silhouette and dropped shoulders.",
     tags: ["Organic", "Modern Fit", "Everyday"]
   },
@@ -84,7 +84,7 @@ export const CLOTHING_PRODUCTS: Product[] = [
     name: "Sand Beige Essential Pocket Tee",
     category: "clothing",
     subcategory: "t-shirts",
-    image: "/assets/clothing/tshirt-3.jpg",
+    image: "/assets/clothing/s6.png",
     description: "Garment-dyed neutral pocket t-shirt made with pre-shrunk cotton for a lived-in luxury texture.",
     tags: ["Garment Dyed", "Neutral", "Comfort"]
   },
@@ -93,7 +93,7 @@ export const CLOTHING_PRODUCTS: Product[] = [
     name: "Selvedge Raw Indigo Slim Denim",
     category: "clothing",
     subcategory: "jeans",
-    image: "/assets/clothing/jeans-1.jpg",
+    image: "/assets/clothing/s7.jpeg",
     description: "Authentic 13.5 oz Japanese-style selvedge denim woven on vintage shuttle looms. Features clean copper rivets and a tailored slim taper.",
     tags: ["Selvedge", "Raw Denim", "Slim Fit"],
     isFeatured: true
@@ -103,7 +103,7 @@ export const CLOTHING_PRODUCTS: Product[] = [
     name: "Washed Charcoal Tapered Jeans",
     category: "clothing",
     subcategory: "jeans",
-    image: "/assets/clothing/jeans-2.jpg",
+    image: "/assets/clothing/jeans-1.jpg",
     description: "Mid-weight stretch cotton denim in a mineral faded charcoal wash with custom matte hardware.",
     tags: ["Stretch", "Tapered", "Charcoal"],
     isNewArrival: true
@@ -113,7 +113,7 @@ export const CLOTHING_PRODUCTS: Product[] = [
     name: "Vintage Stonewash Relaxed Jeans",
     category: "clothing",
     subcategory: "jeans",
-    image: "/assets/clothing/jeans-3.jpg",
+    image: "/assets/clothing/jeans-2.jpg",
     description: "Classic 90s inspired straight-leg jeans with authentic stone wash distressing and reinforced stitching.",
     tags: ["Straight Fit", "Classic", "Durable"]
   },
@@ -122,7 +122,7 @@ export const CLOTHING_PRODUCTS: Product[] = [
     name: "Tailored Pleated Wool Trousers",
     category: "clothing",
     subcategory: "trousers",
-    image: "/assets/clothing/trousers-1.jpg",
+    image: "/assets/clothing/jeans-3.jpg",
     description: "Refined single-pleat trousers in charcoal wool blend with side adjusters and a sharp pressed crease.",
     tags: ["Wool Blend", "Pleated", "Formal"],
     isFeatured: true
@@ -132,7 +132,7 @@ export const CLOTHING_PRODUCTS: Product[] = [
     name: "Slim Stretch Chino Pants",
     category: "clothing",
     subcategory: "trousers",
-    image: "/assets/clothing/trousers-2.jpg",
+    image: "/assets/clothing/trousers-1.jpg",
     description: "Versatile khaki stretch chinos featuring clean slant pockets and a modern streamlined ankle opening.",
     tags: ["Chino", "Stretch", "Smart Casual"]
   },
@@ -141,7 +141,7 @@ export const CLOTHING_PRODUCTS: Product[] = [
     name: "Oatmeal French Terry Hoodie",
     category: "clothing",
     subcategory: "hoodies",
-    image: "/assets/clothing/hoodies-1.jpg",
+    image: "/assets/clothing/trousers-2.jpg",
     description: "Heavyweight 400 GSM loopback cotton terry hoodie with a double-layered hood and clean seamless pocketing.",
     tags: ["400 GSM", "Heavyweight", "Minimal"],
     isNewArrival: true
@@ -161,7 +161,7 @@ export const CLOTHING_PRODUCTS: Product[] = [
     name: "Minimalist Tailored Overcoat",
     category: "clothing",
     subcategory: "jackets",
-    image: "/assets/clothing/jackets-2.jpg",
+    image: "/assets/clothing/tshirt-2.jpg",
     description: "Notch lapel single-breasted wool blend coat featuring clean hand-finished pockets and unstructured shoulders.",
     tags: ["Tailored", "Wool Blend", "Editorial"]
   }
@@ -173,7 +173,7 @@ export const FOOTWEAR_PRODUCTS: Product[] = [
     name: "Aerodynamic Performance Runner",
     category: "footwear",
     subcategory: "sports shoes",
-    image: "/assets/footwear/sports-1.jpg",
+    image: "/assets/footwear/s1.webp",
     description: "Engineered mesh upper with responsive cushioned midsole and high-traction rubber outsole for all-day agility.",
     tags: ["Breathable", "Cushioned", "Lightweight"],
     isNewArrival: true,
@@ -184,7 +184,7 @@ export const FOOTWEAR_PRODUCTS: Product[] = [
     name: "Trail Tech Low-Top Trainer",
     category: "footwear",
     subcategory: "sports shoes",
-    image: "/assets/footwear/sports-2.jpg",
+    image: "/assets/footwear/s2.png",
     description: "Rugged synthetic overlays with quick-lace toggle system and reinforced toe-cap for enhanced durability.",
     tags: ["Trail Ready", "Traction", "Modern"]
   },
@@ -193,7 +193,7 @@ export const FOOTWEAR_PRODUCTS: Product[] = [
     name: "Minimalist Full-Grain White Sneaker",
     category: "footwear",
     subcategory: "casual shoes",
-    image: "/assets/footwear/casual-1.jpg",
+    image: "/assets/footwear/s3.jpeg",
     description: "Handcrafted from buttery Italian-finish calf leather with gold stamped accents and stitched rubber cupsole.",
     tags: ["Calf Leather", "Handcrafted", "Essential"],
     isNewArrival: true,
@@ -204,7 +204,7 @@ export const FOOTWEAR_PRODUCTS: Product[] = [
     name: "Retro Suede Court Sneaker",
     category: "footwear",
     subcategory: "casual shoes",
-    image: "/assets/footwear/casual-2.jpg",
+    image: "/assets/footwear/s4.jpeg",
     description: "Suede and canvas hybrid with retro gum outsole, padded collar, and vintage tonal styling.",
     tags: ["Suede", "Gum Sole", "Retro"]
   },
@@ -213,7 +213,7 @@ export const FOOTWEAR_PRODUCTS: Product[] = [
     name: "Handcrafted Leather Oxford Derby",
     category: "footwear",
     subcategory: "formal shoes",
-    image: "/assets/footwear/formal-1.jpg",
+    image: "/assets/footwear/s5.jpeg",
     description: "Formal closed-lacing dress shoe crafted in polished deep brown leather with Goodyear welted leather sole.",
     tags: ["Full Grain", "Goodyear Welt", "Formal"],
     isFeatured: true
@@ -223,7 +223,7 @@ export const FOOTWEAR_PRODUCTS: Product[] = [
     name: "Burnished Tan Wingtip Brogue",
     category: "footwear",
     subcategory: "formal shoes",
-    image: "/assets/footwear/formal-2.jpg",
+    image: "/assets/footwear/s6.jpeg",
     description: "Intricate laser brogue perforations with hand-burnished medallion toe and cushioned leather footbed.",
     tags: ["Brogue", "Hand Burnished", "Heritage"]
   },
@@ -232,7 +232,7 @@ export const FOOTWEAR_PRODUCTS: Product[] = [
     name: "Suede Penny Loafers (Mocha)",
     category: "footwear",
     subcategory: "loafers",
-    image: "/assets/footwear/loafers-1.jpg",
+    image: "/assets/footwear/s7.jpeg",
     description: "Supple unlined mocha brown suede with classic penny saddle strap and flexible leather sole.",
     tags: ["Suede", "Penny Strap", "Smart Casual"],
     isNewArrival: true,
@@ -243,7 +243,7 @@ export const FOOTWEAR_PRODUCTS: Product[] = [
     name: "Polished Black Horsebit Loafer",
     category: "footwear",
     subcategory: "loafers",
-    image: "/assets/footwear/loafers-2.jpg",
+    image: "/assets/footwear/s8.webp",
     description: "Premium smooth leather shoe topped with gold-tone horsebit hardware and stacked leather heel.",
     tags: ["Horsebit", "Smooth Leather", "Luxury"]
   },
@@ -252,7 +252,7 @@ export const FOOTWEAR_PRODUCTS: Product[] = [
     name: "Ergonomic Leather Slide Sandals",
     category: "footwear",
     subcategory: "sandals",
-    image: "/assets/footwear/sandals-1.jpg",
+    image: "/assets/footwear/s9.jpeg",
     description: "Dual adjustable leather straps paired with contoured cork footbed and shock-absorbing EVA sole.",
     tags: ["Cork Footbed", "Leather", "Ergonomic"]
   },
@@ -261,7 +261,7 @@ export const FOOTWEAR_PRODUCTS: Product[] = [
     name: "Minimalist Suede Mule Slippers",
     category: "footwear",
     subcategory: "slippers",
-    image: "/assets/footwear/slippers-1.jpg",
+    image: "/assets/footwear/s10.png",
     description: "Slip-on closed-toe mule in soft taupe suede with shearling-lined inner footbed and outdoor rubber base.",
     tags: ["Slip On", "Comfort", "Lounge"]
   }
@@ -293,7 +293,7 @@ export const BAGS_PRODUCTS: Product[] = [
     name: "Full-Grain Leather Weekender Duffel",
     category: "bags",
     subcategory: "travel bags",
-    image: "/assets/bags/travel-1.jpg",
+    image: "/assets/bags/travel-1.png",
     description: "Spacious 45L travel duffle crafted with vegetable-tanned leather, heavy-duty brass YKK zippers, and padded shoulder strap.",
     tags: ["Leather", "45L Travel", "Brass Hardware"],
     isNewArrival: true,
@@ -342,7 +342,7 @@ export const BAGS_PRODUCTS: Product[] = [
     name: "Minimalist Modern Weekender Bag",
     category: "bags",
     subcategory: "duffle bags",
-    image: "/assets/bags/duffle-2.jpg",
+    image: "/assets/bags/duffle-2.png",
     description: "Streamlined contemporary weekender in charcoal melange fabric with dual grab handles and detachable cross strap.",
     tags: ["Charcoal Melange", "Weekender", "Lightweight"]
   },

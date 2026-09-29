@@ -7,13 +7,13 @@ import ScrollProgress from "@/components/ScrollProgress";
 
 export const metadata: Metadata = {
   title: "Akhilesh Collection | Men's Clothing, Footwear & Bags",
-  description: "Akhilesh Collection – Explore men's clothing, footwear and bags at Main Market, Subheda, Barwahi.",
+  description: "Akhilesh Collection – Explore men's clothing, footwear and bags at Main Market, Subheda, Barabanki",
   keywords: [
     "Akhilesh Collection",
-    "Men's Clothing Barwahi",
-    "Footwear Shop Barwahi",
+    "Men's Clothing Barabanki",
+    "Footwear Shop Barabanki",
     "Subheda Market Garments",
-    "Bags and Luggage Barwahi"
+    "Bags and Luggage Barabanki"
   ],
   authors: [{ name: "Akhilesh Collection" }],
   icons: {

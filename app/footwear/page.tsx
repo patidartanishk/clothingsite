@@ -1,58 +1,24 @@
 ﻿"use client";
 
-import React, { useState, useMemo } from "react";
-
+import React from "react";
 import Image from "next/image";
-
 import { motion } from "framer-motion";
 
 import "@/styles/footwear.css";
 
-import ProductFilters from "@/components/ProductFilters";
-
 import ProductGrid from "@/components/ProductGrid";
-
 import AboutStore from "@/components/AboutStore";
-
 import MapSection from "@/components/MapSection";
 
 import { FOOTWEAR_PRODUCTS } from "@/data/products";
 
-const FILTERS = [
-  "ALL",
-  "SPORTS SHOES",
-  "CASUAL SHOES",
-  "FORMAL SHOES",
-  "SANDALS",
-  "SLIPPERS",
-  "LOAFERS",
-];
-
 export default function FootwearPage() {
-  const [activeFilter, setActiveFilter] = useState("ALL");
-
-  const filteredProducts = useMemo(() => {
-    if (activeFilter === "ALL") {
-      return FOOTWEAR_PRODUCTS;
-    }
-
-    const filterKey = activeFilter.toLowerCase();
-
-    return FOOTWEAR_PRODUCTS.filter(
-      (p) => p.subcategory.toLowerCase() === filterKey
-    );
-  }, [activeFilter]);
-
   return (
     <div className="footwear-page">
-
       {/* Footwear Hero */}
-
       <section className="footwear-page-hero">
         <div className="container">
-
           <div className="footwear-hero-grid">
-
             <motion.div
               className="footwear-hero-text"
               initial={{
@@ -72,9 +38,7 @@ export default function FootwearPage() {
                 FOOTWEAR COLLECTION
               </span>
 
-              <h1>
-                FOOTWEAR
-              </h1>
+              <h1>FOOTWEAR</h1>
 
               <p>
                 Step into style.
@@ -98,7 +62,7 @@ export default function FootwearPage() {
               }}
             >
               <Image
-                src="/assets/footwear/hero-footwear.jpg"
+                src="/assets/footwear/s12.webp"
                 alt="Premium Footwear Collection - Akhilesh Collection"
                 fill
                 priority
@@ -108,56 +72,40 @@ export default function FootwearPage() {
                 }}
               />
             </motion.div>
-
           </div>
         </div>
       </section>
 
-      {/* Footwear Filters */}
-
-      <ProductFilters
-        categories={FILTERS}
-        activeCategory={activeFilter}
-        onSelectCategory={setActiveFilter}
-        totalCount={filteredProducts.length}
-      />
-
       {/* Footwear Product Grid */}
-
       <section
         className="container catalog-section"
         aria-label="Footwear Products"
       >
         <div className="catalog-count-row">
-
           <span>
-            Showing {filteredProducts.length}{" "}
-            {filteredProducts.length === 1
+            Showing {FOOTWEAR_PRODUCTS.length}{" "}
+            {FOOTWEAR_PRODUCTS.length === 1
               ? "Style"
               : "Styles"}
           </span>
 
           <span>
-            Category: {activeFilter}
+            Footwear Collection
           </span>
-
         </div>
 
         <ProductGrid
-          products={filteredProducts}
+          products={FOOTWEAR_PRODUCTS}
           gridClassName="footwear-catalog-grid"
           imageOnly={true}
         />
       </section>
 
       {/* About / Shop Information */}
-
       <AboutStore />
 
       {/* Google Map */}
-
       <MapSection />
-
     </div>
   );
 }

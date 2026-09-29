@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
           <span className="eyebrow">OUR COMMITMENT</span>
           <h2 className="section-title">WHY CHOOSE US</h2>
           <p className="section-subtitle" style={{ textAlign: "center" }}>
-            Delivering authentic style and unmatched value to Barwahi.
+            Delivering authentic style and unmatched value toBarabanki.
           </p>
         </div>
 

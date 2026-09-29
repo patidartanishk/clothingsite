@@ -2,6 +2,7 @@
    AKHILESH COLLECTION — CLOTHING PAGE
    ========================================================= */
 
+
 /* =========================================================
    CATEGORY PAGE HERO
    ========================================================= */
@@ -66,58 +67,6 @@
   object-position: top center;
 }
 
-/* =========================================================
-   CATEGORY FILTERS BAR
-   ========================================================= */
-
-.filter-bar-sticky {
-  position: sticky;
-  top: 76px;
-  z-index: 20;
-  background: rgba(250, 248, 244, 0.94);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-light);
-  padding: 16px 0;
-  margin-bottom: 40px;
-}
-
-.filter-pills-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-  scrollbar-width: none;
-}
-
-.filter-pills-row::-webkit-scrollbar {
-  display: none;
-}
-
-.filter-pill {
-  position: relative;
-  padding: 9px 20px;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  background: transparent;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  transition: var(--transition-smooth);
-}
-
-.filter-pill:hover {
-  color: var(--text-primary);
-  background: rgba(17, 17, 17, 0.04);
-}
-
-.filter-pill.active {
-  color: #ffffff;
-  background-color: var(--text-primary);
-}
 
 /* =========================================================
    CATALOG COUNT
@@ -133,6 +82,7 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
+
 
 /* =========================================================
    CATALOG PRODUCT GRID
@@ -158,6 +108,7 @@
     gap: 28px;
   }
 }
+
 
 /* =========================================================
    IMAGE-ONLY PRODUCT CARDS
@@ -193,6 +144,7 @@
   transform: scale(1.03);
 }
 
+
 /* =========================================================
    NO PRODUCTS
    ========================================================= */
@@ -205,6 +157,7 @@
   border: 1px dashed var(--border-light);
   border-radius: var(--radius-md);
 }
+
 
 /* =========================================================
    MOBILE
@@ -231,17 +184,6 @@
     height: 240px;
   }
 
-  .filter-bar-sticky {
-    top: 64px;
-    padding: 12px 0;
-    margin-bottom: 28px;
-  }
-
-  .filter-pill {
-    padding: 8px 16px;
-    font-size: 0.72rem;
-  }
-
   .catalog-count-row {
     margin-bottom: 20px;
     font-size: 0.7rem;
@@ -257,6 +199,7 @@
     aspect-ratio: 1 / 1.15;
   }
 }
+
 
 /* =========================================================
    SMALL PHONES

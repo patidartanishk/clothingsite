@@ -1,9 +1,16 @@
-﻿/* styles/bags.css */
+﻿/* =========================================================
+   AKHILESH COLLECTION — BAGS PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   BAGS PAGE HERO
+   ========================================================= */
 
 .bags-page-hero {
   position: relative;
   min-height: 380px;
-  background-color: #F4EFEB;
+  background-color: #f4efeb;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -59,57 +66,11 @@
   object-fit: cover;
 }
 
-/* Bags Filters */
-.bags-filter-bar {
-  position: sticky;
-  top: 76px;
-  z-index: 20;
-  background: rgba(250, 248, 244, 0.94);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-light);
-  padding: 16px 0;
-  margin-bottom: 40px;
-}
 
-.bags-filter-pills {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-  scrollbar-width: none;
-}
+/* =========================================================
+   BAGS PRODUCT GRID
+   ========================================================= */
 
-.bags-filter-pills::-webkit-scrollbar {
-  display: none;
-}
-
-.bags-pill {
-  position: relative;
-  padding: 9px 20px;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  background: transparent;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  transition: var(--transition-smooth);
-}
-
-.bags-pill:hover {
-  color: var(--text-primary);
-  background: rgba(17, 17, 17, 0.04);
-}
-
-.bags-pill.active {
-  color: #FFFFFF;
-  background-color: var(--text-primary);
-}
-
-/* Bags Product Grid */
 .bags-catalog-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -128,5 +89,125 @@
   .bags-catalog-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 28px;
+  }
+}
+
+
+/* =========================================================
+   IMAGE-ONLY PRODUCT CARDS
+   ========================================================= */
+
+.bags-catalog-grid.catalog-grid-image-only {
+  align-items: stretch;
+}
+
+.bags-catalog-grid .catalog-image-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+}
+
+.bags-catalog-grid .catalog-image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+}
+
+.bags-catalog-grid .catalog-image-box img {
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bags-catalog-grid .catalog-image-card:hover .catalog-image-box img {
+  transform: scale(1.03);
+}
+
+
+/* =========================================================
+   CATALOG COUNT
+   ========================================================= */
+
+.catalog-section {
+  padding-top: 50px;
+}
+
+.catalog-count-row {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .bags-page-hero {
+    padding: 60px 0 40px;
+  }
+
+  .bags-hero-grid {
+    gap: 28px;
+  }
+
+  .bags-hero-text h1 {
+    font-size: 2.6rem;
+  }
+
+  .bags-hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .bags-hero-image-box {
+    height: 240px;
+  }
+
+  .catalog-section {
+    padding-top: 40px;
+  }
+
+  .catalog-count-row {
+    margin-bottom: 20px;
+    font-size: 0.7rem;
+    gap: 20px;
+  }
+
+  .bags-catalog-grid {
+    gap: 12px;
+    margin-bottom: 60px;
+  }
+
+  .bags-catalog-grid .catalog-image-box {
+    aspect-ratio: 1 / 1.15;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .bags-hero-text h1 {
+    font-size: 2.35rem;
+  }
+
+  .bags-hero-image-box {
+    height: 210px;
+  }
+
+  .bags-catalog-grid {
+    gap: 10px;
   }
 }

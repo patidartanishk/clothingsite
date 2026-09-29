@@ -1,57 +1,24 @@
 ﻿"use client";
 
-import React, { useState, useMemo } from "react";
-
+import React from "react";
 import Image from "next/image";
-
 import { motion } from "framer-motion";
 
 import "@/styles/bags.css";
 
-import ProductFilters from "@/components/ProductFilters";
-
 import ProductGrid from "@/components/ProductGrid";
-
 import AboutStore from "@/components/AboutStore";
-
 import MapSection from "@/components/MapSection";
 
 import { BAGS_PRODUCTS } from "@/data/products";
 
-const FILTERS = [
-  "ALL",
-  "BACKPACKS",
-  "TRAVEL BAGS",
-  "LAPTOP BAGS",
-  "DUFFLE BAGS",
-  "SLING BAGS",
-];
-
 export default function BagsPage() {
-  const [activeFilter, setActiveFilter] = useState("ALL");
-
-  const filteredProducts = useMemo(() => {
-    if (activeFilter === "ALL") {
-      return BAGS_PRODUCTS;
-    }
-
-    const filterKey = activeFilter.toLowerCase();
-
-    return BAGS_PRODUCTS.filter(
-      (p) => p.subcategory.toLowerCase() === filterKey
-    );
-  }, [activeFilter]);
-
   return (
     <div className="bags-page">
-
       {/* Bags Hero */}
-
       <section className="bags-page-hero">
         <div className="container">
-
           <div className="bags-hero-grid">
-
             <motion.div
               className="bags-hero-text"
               initial={{
@@ -73,9 +40,7 @@ export default function BagsPage() {
 
               <h1>BAGS</h1>
 
-              <p>
-                Carry your style.
-              </p>
+              <p>Carry your style.</p>
             </motion.div>
 
             <motion.div
@@ -95,7 +60,7 @@ export default function BagsPage() {
               }}
             >
               <Image
-                src="/assets/bags/hero-bags.jpg"
+                src="/assets/categories/bags.png"
                 alt="Contemporary Bags & Luggage Collection - Akhilesh Collection"
                 fill
                 priority
@@ -105,54 +70,36 @@ export default function BagsPage() {
                 }}
               />
             </motion.div>
-
           </div>
         </div>
       </section>
 
-      {/* Bags Filters */}
-
-      <ProductFilters
-        categories={FILTERS}
-        activeCategory={activeFilter}
-        onSelectCategory={setActiveFilter}
-        totalCount={filteredProducts.length}
-      />
-
       {/* Bags Product Grid */}
-
       <section
         className="container catalog-section"
         aria-label="Bags Products"
       >
         <div className="catalog-count-row">
           <span>
-            Showing {filteredProducts.length}{" "}
-            {filteredProducts.length === 1
-              ? "Style"
-              : "Styles"}
+            Showing {BAGS_PRODUCTS.length}{" "}
+            {BAGS_PRODUCTS.length === 1 ? "Style" : "Styles"}
           </span>
 
-          <span>
-            Category: {activeFilter}
-          </span>
+          <span>Bags Collection</span>
         </div>
 
         <ProductGrid
-          products={filteredProducts}
+          products={BAGS_PRODUCTS}
           gridClassName="bags-catalog-grid"
           imageOnly={true}
         />
       </section>
 
       {/* About / Shop Information */}
-
       <AboutStore />
 
       {/* Google Map */}
-
       <MapSection />
-
     </div>
   );
 }

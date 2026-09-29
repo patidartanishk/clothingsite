@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
 
           <p className="footer-mission">
-            A premier fashion destination in Barwahi offering
+            A premier fashion destination inBarabanki offering
             contemporary ready-made menswear, premium footwear,
             and modern lifestyle bags.
           </p>
@@ -240,7 +240,7 @@ export default function Footer() {
             {" & "}
 
             <a
-              href="http://localhost:3000/YASH_BASWAL_LINKEDIN_URL"
+              href="https://www.linkedin.com/in/yash-baswal-a48a953a9"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-credit-link"
