@@ -14,8 +14,8 @@ export const STORE_INFO = {
   name: "AKHILESH COLLECTION",
   subtitle: "Ready-Made Garments & Footwear Shop",
   location: "Main Market, Subheda, Barwahi",
-  phonePrimary: "9956690680",
-  phoneSecondary: "7007406127",
+  phonePrimary: "7007406127",
+  phoneSecondary: "9956690680",
   whatsappNumber: "7007406127",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Main+Market+Subheda+Barwahi",
   openingNote: "Visit our showroom at Main Market, Subheda, Barwahi to experience the complete collection in person."
