@@ -1,0 +1,17 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" width="320" height="60" fill="none">
+  <!-- Monogram Mark -->
+  <g transform="translate(4, 6)">
+    <rect x="0" y="0" width="48" height="48" rx="6" fill="#111111" />
+    <path d="M14 36 L24 12 L34 36" stroke="#FAF8F4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M18 28 L30 28" stroke="#FAF8F4" stroke-width="2.2" stroke-linecap="round" />
+    <path d="M38 18 C33 13 25 14 21 19 C17 24 17 31 22 36 C27 40 35 39 38 34" stroke="#C49A5A" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.95" />
+  </g>
+  <!-- Typography -->
+  <text x="66" y="27" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="700" letter-spacing="3.5" fill="#111111">
+    AKHILESH
+  </text>
+  <text x="67" y="44" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="500" letter-spacing="5.5" fill="#666666">
+    COLLECTION
+  </text>
+  <circle cx="218" cy="40" r="1.5" fill="#A51616" />
+</svg>
