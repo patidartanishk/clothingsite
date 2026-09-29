@@ -1,5 +1,9 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap');
 
+/* ========================================================
+   ROOT VARIABLES
+======================================================== */
+
 :root {
   --bg-primary: #FAF8F4;
   --bg-card: #FFFFFF;
@@ -31,6 +35,10 @@
   --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ========================================================
+   RESET
+======================================================== */
+
 *,
 *::before,
 *::after {
@@ -46,6 +54,7 @@ html {
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -55,6 +64,7 @@ body {
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
+  width: 100%;
 }
 
 a {
@@ -75,13 +85,29 @@ img {
   display: block;
 }
 
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ========================================================
+   CONTAINER
+======================================================== */
+
 .container {
   width: 100%;
   max-width: 1360px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 480px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -121,6 +147,8 @@ img {
   border-radius: var(--radius-sm);
 
   transition: var(--transition-smooth);
+
+  min-height: 46px;
 }
 
 .btn-primary:hover {
@@ -150,6 +178,8 @@ img {
   border-radius: var(--radius-sm);
 
   transition: var(--transition-smooth);
+
+  min-height: 46px;
 }
 
 .btn-outline:hover {
@@ -176,6 +206,8 @@ img {
   border-radius: var(--radius-sm);
 
   transition: var(--transition-smooth);
+
+  min-height: 44px;
 }
 
 .btn-whatsapp:hover {
@@ -204,17 +236,11 @@ img {
 
 .section-title {
   font-family: var(--font-serif);
-  font-size: 2.2rem;
+  font-size: clamp(1.9rem, 5vw, 2.8rem);
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text-primary);
   line-height: 1.2;
-}
-
-@media (min-width: 768px) {
-  .section-title {
-    font-size: 2.8rem;
-  }
 }
 
 .section-subtitle {
@@ -223,6 +249,7 @@ img {
   max-width: 580px;
   font-weight: 400;
   margin-top: 8px;
+  line-height: 1.65;
 }
 
 /* ========================================================
@@ -282,12 +309,7 @@ img {
     color 0.35s ease;
 }
 
-/*
-   HOME / HERO STATE
-
-   Transparent so the fullscreen hero image can continue
-   behind the navbar.
-*/
+/* Transparent navbar */
 
 .navbar-transparent {
   background-color: transparent;
@@ -301,8 +323,6 @@ img {
 
   color: #FFFFFF;
 }
-
-/* Transparent navbar brand */
 
 .navbar-transparent .brand-title {
   color: #FFFFFF;
@@ -320,8 +340,6 @@ img {
   border-bottom: 2px solid #FFFFFF;
 }
 
-/* Transparent navbar links */
-
 .navbar-transparent .nav-link {
   color: rgba(255, 255, 255, 0.78);
 }
@@ -334,8 +352,6 @@ img {
 .navbar-transparent .nav-active-indicator {
   background-color: #FFFFFF;
 }
-
-/* Transparent navbar call */
 
 .navbar-transparent .nav-btn-call {
   color: #FFFFFF;
@@ -351,8 +367,6 @@ img {
   border-color: #FFFFFF;
 }
 
-/* Transparent navbar WhatsApp */
-
 .navbar-transparent .nav-btn-whatsapp {
   color: #FFFFFF;
   background-color: #25D366;
@@ -364,17 +378,11 @@ img {
   border-color: #1EBE5D;
 }
 
-/* Transparent mobile menu button */
-
 .navbar-transparent .mobile-toggle-btn {
   color: #FFFFFF;
 }
 
-/*
-   SCROLLED STATE
-
-   Existing light navbar returns once the user scrolls.
-*/
+/* Scrolled navbar */
 
 .navbar-scrolled {
   background-color: rgba(255, 255, 255, 0.94);
@@ -399,6 +407,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  min-width: 0;
 }
 
 /* ========================================================
@@ -409,11 +419,15 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
+
+  min-width: 0;
 }
 
 .monogram-badge {
   width: 38px;
   height: 38px;
+
+  flex-shrink: 0;
 
   border-radius: var(--radius-sm);
 
@@ -436,6 +450,8 @@ img {
 .brand-text {
   display: flex;
   flex-direction: column;
+
+  min-width: 0;
 }
 
 .brand-title {
@@ -451,6 +467,8 @@ img {
   line-height: 1.1;
 
   transition: color 0.3s ease;
+
+  white-space: nowrap;
 }
 
 .brand-subtitle {
@@ -463,6 +481,8 @@ img {
   color: var(--text-muted);
 
   transition: color 0.3s ease;
+
+  white-space: nowrap;
 }
 
 /* ========================================================
@@ -553,6 +573,8 @@ img {
   background-color: transparent;
 
   transition: var(--transition-smooth);
+
+  min-height: 38px;
 }
 
 .nav-btn-call:hover {
@@ -580,6 +602,8 @@ img {
   background-color: #25D366;
 
   transition: var(--transition-smooth);
+
+  min-height: 38px;
 }
 
 .nav-btn-whatsapp:hover {
@@ -591,11 +615,18 @@ img {
 ======================================================== */
 
 .mobile-toggle-btn {
-  padding: 8px;
+  padding: 10px;
 
   color: var(--text-primary);
 
   transition: color 0.25s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .navbar-transparent .mobile-toggle-btn {
@@ -614,6 +645,7 @@ img {
   background-color: rgba(17, 17, 17, 0.6);
 
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 
   z-index: 10000;
 
@@ -623,11 +655,13 @@ img {
 }
 
 .mobile-drawer {
-  width: 85%;
+  width: min(88%, 360px);
 
   max-width: 360px;
 
-  height: 100%;
+  height: 100dvh;
+
+  min-height: 100vh;
 
   background-color: #FFFFFF;
 
@@ -638,6 +672,8 @@ img {
   flex-direction: column;
 
   overflow-y: auto;
+
+  overscroll-behavior: contain;
 }
 
 .drawer-header {
@@ -655,7 +691,14 @@ img {
 .drawer-close {
   color: var(--text-primary);
 
-  padding: 6px;
+  padding: 8px;
+
+  min-width: 44px;
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .drawer-links {
@@ -674,6 +717,8 @@ img {
   align-items: center;
 
   justify-content: space-between;
+
+  min-height: 50px;
 
   padding: 12px 14px;
 
@@ -700,6 +745,8 @@ img {
 .drawer-active-dot {
   width: 6px;
   height: 6px;
+
+  flex-shrink: 0;
 
   border-radius: 50%;
 
@@ -750,7 +797,9 @@ img {
 
   gap: 8px;
 
-  padding: 12px;
+  padding: 13px;
+
+  min-height: 46px;
 
   border-radius: var(--radius-sm);
 
@@ -815,12 +864,6 @@ img {
   padding: 48px 32px;
 }
 
-@media (min-width: 992px) {
-  .about-store-wrapper {
-    padding: 64px 56px;
-  }
-}
-
 .about-store-grid {
   display: grid;
 
@@ -829,14 +872,6 @@ img {
   gap: 40px;
 
   align-items: center;
-}
-
-@media (min-width: 992px) {
-  .about-store-grid {
-    grid-template-columns: 1.2fr 1fr;
-
-    gap: 60px;
-  }
 }
 
 .about-lead {
@@ -849,6 +884,8 @@ img {
   color: #333333;
 
   margin-bottom: 28px;
+
+  line-height: 1.55;
 }
 
 .store-details-card {
@@ -903,6 +940,8 @@ img {
   font-size: 0.9rem;
 
   color: var(--text-primary);
+
+  overflow-wrap: anywhere;
 }
 
 .info-phones {
@@ -911,6 +950,8 @@ img {
   align-items: center;
 
   gap: 10px;
+
+  flex-wrap: wrap;
 
   font-size: 0.9rem;
 
@@ -951,6 +992,18 @@ img {
   box-shadow: var(--shadow-card);
 }
 
+@media (min-width: 992px) {
+  .about-store-wrapper {
+    padding: 64px 56px;
+  }
+
+  .about-store-grid {
+    grid-template-columns: 1.2fr 1fr;
+
+    gap: 60px;
+  }
+}
+
 /* ========================================================
    MAP SECTION
 ======================================================== */
@@ -964,7 +1017,7 @@ img {
 
   grid-template-columns: 1fr;
 
-  gap: 32px;
+  gap: 0;
 
   background-color: #FFFFFF;
 
@@ -977,14 +1030,8 @@ img {
   box-shadow: var(--shadow-subtle);
 }
 
-@media (min-width: 992px) {
-  .map-container-grid {
-    grid-template-columns: 1fr 1.3fr;
-  }
-}
-
 .map-store-info-col {
-  padding: 48px 36px;
+  padding: 40px 28px;
 
   display: flex;
 
@@ -996,11 +1043,13 @@ img {
 .map-info-heading {
   font-family: var(--font-serif);
 
-  font-size: 1.85rem;
+  font-size: clamp(1.6rem, 5vw, 1.85rem);
 
   font-weight: 600;
 
   margin-bottom: 12px;
+
+  line-height: 1.25;
 }
 
 .map-info-intro {
@@ -1009,6 +1058,8 @@ img {
   color: var(--text-muted);
 
   margin-bottom: 28px;
+
+  line-height: 1.65;
 }
 
 .map-address-box {
@@ -1035,6 +1086,8 @@ img {
 
 .map-pin-icon {
   color: var(--accent-red);
+
+  flex-shrink: 0;
 }
 
 .address-header h4 {
@@ -1057,6 +1110,8 @@ img {
   color: var(--text-primary);
 
   padding-left: 34px;
+
+  overflow-wrap: anywhere;
 }
 
 .map-contact-chips {
@@ -1078,7 +1133,7 @@ img {
 
   background-color: var(--bg-secondary);
 
-  padding: 6px 12px;
+  padding: 7px 12px;
 
   border-radius: var(--radius-full);
 
@@ -1087,6 +1142,10 @@ img {
   font-weight: 600;
 
   color: var(--text-primary);
+
+  max-width: 100%;
+
+  overflow-wrap: anywhere;
 }
 
 .map-actions-row {
@@ -1100,17 +1159,21 @@ img {
 .map-embed-wrapper {
   position: relative;
 
-  min-height: 420px;
+  min-height: 360px;
 
   background-color: var(--bg-secondary);
+
+  width: 100%;
 }
 
 .map-floating-overlay-btn {
   position: absolute;
 
-  bottom: 20px;
+  bottom: 16px;
 
-  right: 20px;
+  right: 16px;
+
+  max-width: calc(100% - 32px);
 
   background-color: rgba(255, 255, 255, 0.96);
 
@@ -1122,7 +1185,7 @@ img {
 
   letter-spacing: 0.05em;
 
-  padding: 10px 18px;
+  padding: 10px 16px;
 
   border-radius: var(--radius-sm);
 
@@ -1132,17 +1195,36 @@ img {
 
   align-items: center;
 
+  justify-content: center;
+
   gap: 6px;
 
   z-index: 5;
 
   transition: var(--transition-smooth);
+
 }
 
 .map-floating-overlay-btn:hover {
   background-color: var(--text-primary);
 
   color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+  .map-store-info-col {
+    padding: 48px 36px;
+  }
+
+  .map-embed-wrapper {
+    min-height: 420px;
+  }
+}
+
+@media (min-width: 992px) {
+  .map-container-grid {
+    grid-template-columns: 1fr 1.3fr;
+  }
 }
 
 /* ========================================================
@@ -1157,6 +1239,7 @@ img {
   background-color: rgba(17, 17, 17, 0.7);
 
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 
   z-index: 11000;
 
@@ -1166,7 +1249,9 @@ img {
 
   justify-content: center;
 
-  padding: 20px;
+  padding: 16px;
+
+  overflow-y: auto;
 }
 
 .modal-card {
@@ -1176,7 +1261,7 @@ img {
 
   max-width: 860px;
 
-  max-height: 90vh;
+  max-height: calc(100dvh - 32px);
 
   background-color: #FFFFFF;
 
@@ -1184,23 +1269,25 @@ img {
 
   overflow-y: auto;
 
+  overflow-x: hidden;
+
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
 }
 
 .modal-close-btn {
   position: absolute;
 
-  top: 18px;
+  top: 12px;
 
-  right: 18px;
+  right: 12px;
 
-  width: 36px;
+  width: 38px;
 
-  height: 36px;
+  height: 38px;
 
   border-radius: 50%;
 
-  background-color: rgba(250, 248, 244, 0.9);
+  background-color: rgba(250, 248, 244, 0.92);
 
   display: flex;
 
@@ -1227,32 +1314,24 @@ img {
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 768px) {
-  .modal-content-grid {
-    grid-template-columns: 1.1fr 1.3fr;
-  }
-}
-
 .modal-image-box {
   position: relative;
 
-  min-height: 360px;
+  min-height: 280px;
+
+  height: 52vw;
+
+  max-height: 420px;
 
   background-color: var(--bg-secondary);
-}
-
-@media (min-width: 768px) {
-  .modal-image-box {
-    min-height: 480px;
-  }
 }
 
 .modal-badge-new {
   position: absolute;
 
-  top: 18px;
+  top: 14px;
 
-  left: 18px;
+  left: 14px;
 
   background-color: var(--accent-red);
 
@@ -1270,7 +1349,7 @@ img {
 }
 
 .modal-info-panel {
-  padding: 40px 32px;
+  padding: 28px 22px;
 
   display: flex;
 
@@ -1296,7 +1375,7 @@ img {
 .modal-product-title {
   font-family: var(--font-serif);
 
-  font-size: 1.85rem;
+  font-size: clamp(1.55rem, 6vw, 1.85rem);
 
   line-height: 1.2;
 
@@ -1305,10 +1384,12 @@ img {
   color: var(--text-primary);
 
   margin-bottom: 16px;
+
+  overflow-wrap: anywhere;
 }
 
 .modal-description {
-  font-size: 0.94rem;
+  font-size: 0.92rem;
 
   color: var(--text-muted);
 
@@ -1362,7 +1443,7 @@ img {
 .assurance-item {
   display: flex;
 
-  align-items: center;
+  align-items: flex-start;
 
   gap: 10px;
 
@@ -1396,6 +1477,8 @@ img {
 
   padding: 14px 20px;
 
+  min-height: 48px;
+
   border-radius: var(--radius-sm);
 
   font-size: 0.88rem;
@@ -1405,6 +1488,8 @@ img {
   letter-spacing: 0.04em;
 
   transition: var(--transition-smooth);
+
+  width: 100%;
 }
 
 .modal-btn-wa:hover {
@@ -1426,6 +1511,8 @@ img {
 
   padding: 13px 20px;
 
+  min-height: 48px;
+
   border-radius: var(--radius-sm);
 
   font-size: 0.88rem;
@@ -1435,6 +1522,8 @@ img {
   letter-spacing: 0.04em;
 
   transition: var(--transition-smooth);
+
+  width: 100%;
 }
 
 .modal-btn-call:hover {
@@ -1451,8 +1540,32 @@ img {
   line-height: 1.4;
 }
 
+@media (min-width: 768px) {
+  .modal-backdrop {
+    padding: 20px;
+  }
+
+  .modal-card {
+    max-height: 90vh;
+  }
+
+  .modal-content-grid {
+    grid-template-columns: 1.1fr 1.3fr;
+  }
+
+  .modal-image-box {
+    height: auto;
+    min-height: 480px;
+    max-height: none;
+  }
+
+  .modal-info-panel {
+    padding: 40px 32px;
+  }
+}
+
 /* ========================================================
-   FLOATING ACTIONS DESKTOP
+   FLOATING ACTIONS
 ======================================================== */
 
 .floating-actions-desktop {
@@ -1605,20 +1718,6 @@ img {
   padding-bottom: 60px;
 }
 
-@media (min-width: 768px) {
-  .footer-inner {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .footer-inner {
-    grid-template-columns: 1.8fr 1fr 1.2fr 1.2fr;
-
-    gap: 48px;
-  }
-}
-
 .footer-logo-title {
   font-family: var(--font-sans);
 
@@ -1661,12 +1760,16 @@ img {
   display: flex;
 
   gap: 12px;
+
+  flex-wrap: wrap;
 }
 
 .social-icon-btn {
   width: 38px;
 
   height: 38px;
+
+  flex-shrink: 0;
 
   border-radius: 50%;
 
@@ -1738,6 +1841,8 @@ img {
   font-size: 0.88rem;
 
   color: #A0A0A0;
+
+  min-width: 0;
 }
 
 .contact-icon {
@@ -1754,12 +1859,16 @@ img {
   flex-direction: column;
 
   gap: 4px;
+
+  min-width: 0;
 }
 
 .contact-lines a {
   color: #FFFFFF;
 
   font-weight: 600;
+
+  overflow-wrap: anywhere;
 }
 
 .footer-location-box {
@@ -1770,6 +1879,8 @@ img {
   gap: 12px;
 
   margin-bottom: 16px;
+
+  min-width: 0;
 }
 
 .location-icon {
@@ -1788,6 +1899,8 @@ img {
   color: #A0A0A0;
 
   line-height: 1.5;
+
+  overflow-wrap: anywhere;
 }
 
 .location-text strong {
@@ -1836,22 +1949,14 @@ img {
   color: #777777;
 }
 
-@media (min-width: 768px) {
-  .bottom-bar-inner {
-    flex-direction: row;
-
-    justify-content: space-between;
-
-    text-align: left;
-  }
-}
-
-/* ========================================================
-   FOOTER CREATOR CREDIT
-======================================================== */
-
 .footer-tag-right {
   color: #777777;
+
+  line-height: 1.7;
+
+  max-width: 100%;
+
+  overflow-wrap: anywhere;
 }
 
 .footer-credit-link {
@@ -1872,6 +1977,28 @@ img {
   text-decoration: underline;
 
   text-underline-offset: 4px;
+}
+
+@media (min-width: 768px) {
+  .footer-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-bar-inner {
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-inner {
+    grid-template-columns: 1.8fr 1fr 1.2fr 1.2fr;
+
+    gap: 48px;
+  }
 }
 
 /* ========================================================
@@ -1902,4 +2029,510 @@ img {
   display: block;
 
   overflow: hidden;
+}
+
+/* ========================================================
+   MOBILE RESPONSIVE
+======================================================== */
+
+/* Tablets and smaller laptops */
+
+@media (max-width: 900px) {
+
+  .main-navbar {
+    height: 70px;
+  }
+
+  .brand-title {
+    font-size: 0.98rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.58rem;
+  }
+
+  .about-store-section {
+    padding: 70px 0;
+  }
+
+  .map-section {
+    padding: 50px 0 70px;
+  }
+
+  .main-footer {
+    padding-top: 64px;
+  }
+}
+
+/* Phones */
+
+@media (max-width: 767px) {
+
+  /* ---------- Global ---------- */
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 8vw, 2.25rem);
+    line-height: 1.15;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ---------- Buttons ---------- */
+
+  .btn-primary,
+  .btn-outline,
+  .btn-whatsapp {
+    max-width: 100%;
+  }
+
+  /* ---------- Navbar ---------- */
+
+  .main-navbar {
+    height: 68px;
+  }
+
+  .navbar-inner {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .brand-logo-wrap {
+    gap: 9px;
+    max-width: calc(100% - 55px);
+  }
+
+  .monogram-badge {
+    width: 34px;
+    height: 34px;
+    font-size: 0.82rem;
+  }
+
+  .brand-title {
+    font-size: 0.86rem;
+    letter-spacing: 0.11em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .brand-subtitle {
+    font-size: 0.48rem;
+    letter-spacing: 0.18em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mobile-toggle-btn {
+    min-width: 46px;
+    min-height: 46px;
+    padding: 8px;
+  }
+
+  /* ---------- Mobile Drawer ---------- */
+
+  .mobile-drawer {
+    width: min(92%, 360px);
+    padding: 20px;
+  }
+
+  .drawer-header {
+    padding-bottom: 18px;
+  }
+
+  .drawer-links {
+    padding: 22px 0;
+  }
+
+  .drawer-link {
+    min-height: 52px;
+    font-size: 1rem;
+  }
+
+  /* ---------- About ---------- */
+
+  .about-store-section {
+    padding: 55px 0;
+  }
+
+  .about-store-wrapper {
+    padding: 28px 20px;
+    border-radius: var(--radius-md);
+  }
+
+  .about-store-grid {
+    gap: 28px;
+  }
+
+  .about-lead {
+    font-size: 1rem;
+    margin-bottom: 22px;
+  }
+
+  .store-details-card {
+    padding: 20px 18px;
+    margin-bottom: 22px;
+  }
+
+  .store-name-badge h3 {
+    font-size: 1.05rem;
+  }
+
+  .store-info-row {
+    gap: 10px;
+  }
+
+  .info-text {
+    font-size: 0.84rem;
+  }
+
+  .info-phones {
+    gap: 7px;
+    font-size: 0.82rem;
+  }
+
+  .store-cta-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .store-cta-buttons > * {
+    width: 100%;
+  }
+
+  .store-photo-frame {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* ---------- Map ---------- */
+
+  .map-section {
+    padding: 40px 0 55px;
+  }
+
+  .map-container-grid {
+    border-radius: var(--radius-md);
+  }
+
+  .map-store-info-col {
+    padding: 28px 20px;
+  }
+
+  .map-info-heading {
+    font-size: 1.55rem;
+  }
+
+  .map-info-intro {
+    font-size: 0.86rem;
+    margin-bottom: 22px;
+  }
+
+  .map-address-box {
+    padding: 16px;
+  }
+
+  .map-full-address {
+    padding-left: 0;
+    margin-top: 10px;
+    font-size: 0.84rem;
+  }
+
+  .map-contact-chips {
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .contact-chip {
+    font-size: 0.72rem;
+    padding: 7px 10px;
+  }
+
+  .map-actions-row {
+    flex-direction: column;
+  }
+
+  .map-actions-row > * {
+    width: 100%;
+  }
+
+  .map-embed-wrapper {
+    min-height: 300px;
+  }
+
+  .map-floating-overlay-btn {
+    bottom: 12px;
+    right: 12px;
+    font-size: 0.72rem;
+    padding: 9px 12px;
+  }
+
+  /* ---------- Modal ---------- */
+
+  .modal-backdrop {
+    padding: 10px;
+    align-items: center;
+  }
+
+  .modal-card {
+    max-height: calc(100dvh - 20px);
+    border-radius: 8px;
+  }
+
+  .modal-image-box {
+    min-height: 240px;
+    height: 65vw;
+    max-height: 320px;
+  }
+
+  .modal-info-panel {
+    padding: 24px 18px;
+  }
+
+  .modal-product-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-description {
+    font-size: 0.86rem;
+  }
+
+  .modal-store-assurance {
+    padding: 12px;
+    margin-bottom: 18px;
+  }
+
+  .assurance-item {
+    font-size: 0.8rem;
+  }
+
+  .modal-btn-wa,
+  .modal-btn-call {
+    min-height: 46px;
+    padding: 12px 16px;
+  }
+
+  /* ---------- Floating Buttons ---------- */
+
+  .floating-actions-desktop {
+    bottom: 18px;
+    right: 16px;
+    gap: 9px;
+  }
+
+  .floating-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .wa-tooltip {
+    display: none;
+  }
+
+  /* ---------- Footer ---------- */
+
+  .main-footer {
+    padding-top: 55px;
+    margin-top: 25px;
+  }
+
+  .footer-inner {
+    gap: 34px;
+    padding-bottom: 42px;
+  }
+
+  .footer-logo-title {
+    font-size: 1.15rem;
+    letter-spacing: 0.12em;
+  }
+
+  .footer-logo-sub {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+  }
+
+  .footer-mission {
+    font-size: 0.82rem;
+    max-width: 100%;
+    margin: 16px 0 20px;
+  }
+
+  .footer-heading {
+    font-size: 0.82rem;
+    margin-bottom: 16px;
+  }
+
+  .footer-nav-list,
+  .footer-contact-list {
+    gap: 10px;
+  }
+
+  .footer-nav-list a,
+  .footer-contact-list li,
+  .location-text {
+    font-size: 0.82rem;
+  }
+
+  .footer-bottom-bar {
+    padding: 20px 0;
+  }
+
+  .bottom-bar-inner {
+    gap: 8px;
+    font-size: 0.72rem;
+  }
+
+  .footer-tag-right {
+    max-width: 330px;
+  }
+}
+
+/* ========================================================
+   SMALL PHONES
+======================================================== */
+
+@media (max-width: 380px) {
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .main-navbar {
+    height: 64px;
+  }
+
+  .monogram-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 0.76rem;
+  }
+
+  .brand-logo-wrap {
+    gap: 7px;
+  }
+
+  .brand-title {
+    font-size: 0.78rem;
+    letter-spacing: 0.09em;
+  }
+
+  .brand-subtitle {
+    font-size: 0.43rem;
+    letter-spacing: 0.14em;
+  }
+
+  .mobile-toggle-btn {
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.84rem;
+  }
+
+  .about-store-wrapper {
+    padding: 24px 16px;
+  }
+
+  .store-details-card {
+    padding: 18px 15px;
+  }
+
+  .map-store-info-col {
+    padding: 24px 16px;
+  }
+
+  .modal-backdrop {
+    padding: 7px;
+  }
+
+  .modal-card {
+    max-height: calc(100dvh - 14px);
+  }
+
+  .modal-info-panel {
+    padding: 22px 16px;
+  }
+
+  .modal-product-title {
+    font-size: 1.4rem;
+  }
+
+  .main-footer {
+    padding-top: 48px;
+  }
+
+  .footer-tag-right {
+    max-width: 290px;
+  }
+}
+
+/* ========================================================
+   LANDSCAPE PHONES
+======================================================== */
+
+@media (max-height: 600px) and (max-width: 900px) {
+
+  .mobile-drawer {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .drawer-links {
+    padding: 14px 0;
+  }
+
+  .drawer-link {
+    min-height: 44px;
+    padding: 9px 12px;
+  }
+
+  .drawer-store-loc {
+    margin-bottom: 12px;
+  }
+
+  .drawer-buttons {
+    gap: 7px;
+  }
+
+  .drawer-call-btn,
+  .drawer-wa-btn {
+    min-height: 42px;
+    padding: 9px;
+  }
+}
+
+/* ========================================================
+   REDUCED MOTION
+======================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

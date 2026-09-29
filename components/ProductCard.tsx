@@ -3,15 +3,23 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MessageCircle, Eye } from "lucide-react";
-import { Product, getWhatsAppLink } from "@/data/products";
+import { Eye } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
+
+import {
+  Product,
+  getWhatsAppLink,
+} from "@/data/products";
 
 interface ProductCardProps {
   product: Product;
   onViewDetails: (product: Product) => void;
 }
 
-export default function ProductCard({ product, onViewDetails }: ProductCardProps) {
+export default function ProductCard({
+  product,
+  onViewDetails,
+}: ProductCardProps) {
   return (
     <motion.article
       layout
@@ -19,9 +27,13 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.96 }}
-      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      transition={{
+        duration: 0.45,
+        ease: [0.16, 1, 0.3, 1],
+      }}
     >
       {/* Image Container */}
+
       <div
         className="product-image-box"
         onClick={() => onViewDetails(product)}
@@ -44,7 +56,9 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
         />
 
         {product.isNewArrival && (
-          <span className="product-badge-new">NEW</span>
+          <span className="product-badge-new">
+            NEW
+          </span>
         )}
 
         <div className="product-overlay-quickview">
@@ -56,14 +70,24 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
       </div>
 
       {/* Info Container */}
+
       <div className="product-info-box">
-        <span className="product-subcat">{product.subcategory}</span>
-        <h3 className="product-title" title={product.name}>
+
+        <span className="product-subcat">
+          {product.subcategory}
+        </span>
+
+        <h3
+          className="product-title"
+          title={product.name}
+        >
           {product.name}
         </h3>
 
         {/* Action CTAs */}
+
         <div className="product-card-actions">
+
           <button
             type="button"
             className="btn-card-details"
@@ -71,16 +95,19 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
           >
             Details
           </button>
+
           <a
             href={getWhatsAppLink(product.name)}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-card-wa"
             title="Inquire on WhatsApp"
+            aria-label={`Inquire about ${product.name} on WhatsApp`}
           >
-            <MessageCircle size={14} />
+            <SiWhatsapp size={15} />
             <span>Inquire</span>
           </a>
+
         </div>
       </div>
     </motion.article>

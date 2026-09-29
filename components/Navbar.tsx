@@ -4,7 +4,13 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, MessageCircle, Menu, X, ArrowUpRight } from "lucide-react";
+import {
+  Phone,
+  Menu,
+  X,
+  ArrowUpRight,
+} from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 import { STORE_INFO, getWhatsAppLink } from "@/data/products";
 
 const NAV_LINKS = [
@@ -26,7 +32,9 @@ export default function Navbar() {
 
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -53,6 +61,10 @@ export default function Navbar() {
 
   return (
     <>
+      {/* ==================================================
+          NAVBAR
+      ================================================== */}
+
       <header
         className={`main-navbar ${
           isScrolled || !isHomePage
@@ -62,25 +74,41 @@ export default function Navbar() {
       >
         <div className="container navbar-inner">
 
-          {/* BRAND */}
+          {/* ==================================================
+              BRAND
+          ================================================== */}
+
           <Link
             href="/"
             className="navbar-brand"
             aria-label="Akhilesh Collection Home"
           >
             <div className="brand-logo-wrap">
-              <div className="monogram-badge" aria-hidden="true">
+
+              <div
+                className="monogram-badge"
+                aria-hidden="true"
+              >
                 AC
               </div>
 
               <div className="brand-text">
-                <span className="brand-title">AKHILESH</span>
-                <span className="brand-subtitle">COLLECTION</span>
+                <span className="brand-title">
+                  AKHILESH
+                </span>
+
+                <span className="brand-subtitle">
+                  COLLECTION
+                </span>
               </div>
+
             </div>
           </Link>
 
-          {/* DESKTOP NAVIGATION */}
+          {/* ==================================================
+              DESKTOP NAVIGATION
+          ================================================== */}
+
           <nav
             className="navbar-nav desktop-only"
             aria-label="Main Navigation"
@@ -114,17 +142,28 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* DESKTOP ACTIONS */}
+          {/* ==================================================
+              DESKTOP ACTIONS
+          ================================================== */}
+
           <div className="navbar-actions desktop-only">
+
+            {/* CALL */}
 
             <a
               href={`tel:+91${STORE_INFO.phonePrimary}`}
               className="nav-btn-call"
               aria-label={`Call Akhilesh Collection at ${STORE_INFO.phonePrimary}`}
             >
-              <Phone size={15} strokeWidth={1.8} />
+              <Phone
+                size={15}
+                strokeWidth={1.8}
+              />
+
               <span>Call</span>
             </a>
+
+            {/* WHATSAPP */}
 
             <a
               href={getWhatsAppLink()}
@@ -133,17 +172,26 @@ export default function Navbar() {
               className="nav-btn-whatsapp"
               aria-label="Chat with Akhilesh Collection on WhatsApp"
             >
-              <MessageCircle size={15} strokeWidth={1.8} />
+              <SiWhatsapp
+                size={17}
+                aria-hidden="true"
+              />
+
               <span>WhatsApp</span>
             </a>
 
           </div>
 
-          {/* MOBILE MENU BUTTON */}
+          {/* ==================================================
+              MOBILE MENU BUTTON
+          ================================================== */}
+
           <button
             type="button"
             className="mobile-toggle-btn mobile-only"
-            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            onClick={() =>
+              setMobileMenuOpen((prev) => !prev)
+            }
             aria-label={
               mobileMenuOpen
                 ? "Close navigation menu"
@@ -151,69 +199,131 @@ export default function Navbar() {
             }
             aria-expanded={mobileMenuOpen}
           >
-            <AnimatePresence mode="wait" initial={false}>
+            <AnimatePresence
+              mode="wait"
+              initial={false}
+            >
               {mobileMenuOpen ? (
                 <motion.span
                   key="close"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
+                  initial={{
+                    rotate: -90,
+                    opacity: 0,
+                  }}
+                  animate={{
+                    rotate: 0,
+                    opacity: 1,
+                  }}
+                  exit={{
+                    rotate: 90,
+                    opacity: 0,
+                  }}
+                  transition={{
+                    duration: 0.2,
+                  }}
                 >
-                  <X size={23} strokeWidth={1.8} />
+                  <X
+                    size={23}
+                    strokeWidth={1.8}
+                  />
                 </motion.span>
               ) : (
                 <motion.span
                   key="menu"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
+                  initial={{
+                    rotate: 90,
+                    opacity: 0,
+                  }}
+                  animate={{
+                    rotate: 0,
+                    opacity: 1,
+                  }}
+                  exit={{
+                    rotate: -90,
+                    opacity: 0,
+                  }}
+                  transition={{
+                    duration: 0.2,
+                  }}
                 >
-                  <Menu size={23} strokeWidth={1.8} />
+                  <Menu
+                    size={23}
+                    strokeWidth={1.8}
+                  />
                 </motion.span>
               )}
             </AnimatePresence>
           </button>
+
         </div>
       </header>
 
-      {/* MOBILE DRAWER */}
+      {/* ==================================================
+          MOBILE DRAWER
+      ================================================== */}
+
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             className="mobile-drawer-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            onClick={() => setMobileMenuOpen(false)}
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            exit={{
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.25,
+            }}
+            onClick={() =>
+              setMobileMenuOpen(false)
+            }
           >
             <motion.aside
               className="mobile-drawer"
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
+              initial={{
+                x: "100%",
+              }}
+              animate={{
+                x: 0,
+              }}
+              exit={{
+                x: "100%",
+              }}
               transition={{
                 type: "spring",
                 stiffness: 300,
                 damping: 30,
               }}
-              onClick={(event) => event.stopPropagation()}
+              onClick={(event) =>
+                event.stopPropagation()
+              }
               aria-label="Mobile navigation"
             >
 
-              {/* DRAWER HEADER */}
+              {/* ==================================================
+                  DRAWER HEADER
+              ================================================== */}
+
               <div className="drawer-header">
 
                 <Link
                   href="/"
                   className="navbar-brand"
                   aria-label="Akhilesh Collection Home"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() =>
+                    setMobileMenuOpen(false)
+                  }
                 >
                   <div className="brand-logo-wrap">
-                    <div className="monogram-badge">
+
+                    <div
+                      className="monogram-badge"
+                      aria-hidden="true"
+                    >
                       AC
                     </div>
 
@@ -226,88 +336,118 @@ export default function Navbar() {
                         COLLECTION
                       </span>
                     </div>
+
                   </div>
                 </Link>
 
                 <button
                   type="button"
                   className="drawer-close"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() =>
+                    setMobileMenuOpen(false)
+                  }
                   aria-label="Close navigation menu"
                 >
-                  <X size={22} strokeWidth={1.8} />
+                  <X
+                    size={22}
+                    strokeWidth={1.8}
+                  />
                 </button>
 
               </div>
 
-              {/* DRAWER CONTENT */}
+              {/* ==================================================
+                  DRAWER CONTENT
+              ================================================== */}
+
               <div className="drawer-content">
+
+                {/* DRAWER HEADING */}
 
                 <div className="drawer-heading">
                   <span>EXPLORE</span>
-                  <p>Discover our collections.</p>
+
+                  <p>
+                    Discover our collections.
+                  </p>
                 </div>
+
+                {/* NAVIGATION LINKS */}
 
                 <nav
                   className="drawer-links"
                   aria-label="Mobile Navigation"
                 >
-                  {NAV_LINKS.map((link, index) => {
-                    const isActive = pathname === link.href;
+                  {NAV_LINKS.map(
+                    (link, index) => {
+                      const isActive =
+                        pathname === link.href;
 
-                    return (
-                      <motion.div
-                        key={link.name}
-                        initial={{
-                          opacity: 0,
-                          x: 20,
-                        }}
-                        animate={{
-                          opacity: 1,
-                          x: 0,
-                        }}
-                        transition={{
-                          delay: 0.08 + index * 0.05,
-                          duration: 0.35,
-                        }}
-                      >
-                        <Link
-                          href={link.href}
-                          className={`drawer-link ${
-                            isActive ? "active" : ""
-                          }`}
-                          onClick={() =>
-                            setMobileMenuOpen(false)
-                          }
+                      return (
+                        <motion.div
+                          key={link.name}
+                          initial={{
+                            opacity: 0,
+                            x: 20,
+                          }}
+                          animate={{
+                            opacity: 1,
+                            x: 0,
+                          }}
+                          transition={{
+                            delay:
+                              0.08 +
+                              index * 0.05,
+                            duration: 0.35,
+                          }}
                         >
-                          <span className="drawer-link-number">
-                            0{index + 1}
-                          </span>
+                          <Link
+                            href={link.href}
+                            className={`drawer-link ${
+                              isActive
+                                ? "active"
+                                : ""
+                            }`}
+                            onClick={() =>
+                              setMobileMenuOpen(
+                                false
+                              )
+                            }
+                          >
+                            <span className="drawer-link-number">
+                              0{index + 1}
+                            </span>
 
-                          <span className="drawer-link-name">
-                            {link.name}
-                          </span>
+                            <span className="drawer-link-name">
+                              {link.name}
+                            </span>
 
-                          <ArrowUpRight
-                            size={18}
-                            strokeWidth={1.6}
-                            className="drawer-link-arrow"
-                          />
+                            <ArrowUpRight
+                              size={18}
+                              strokeWidth={1.6}
+                              className="drawer-link-arrow"
+                            />
 
-                          {isActive && (
-                            <span className="drawer-active-dot" />
-                          )}
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
+                            {isActive && (
+                              <span className="drawer-active-dot" />
+                            )}
+                          </Link>
+                        </motion.div>
+                      );
+                    }
+                  )}
                 </nav>
 
-                {/* STORE INFORMATION */}
+                {/* ==================================================
+                    STORE INFORMATION
+                ================================================== */}
+
                 <div className="drawer-contact-box">
 
                   <div className="drawer-store-heading">
-                    <span>VISIT THE STORE</span>
+                    <span>
+                      VISIT THE STORE
+                    </span>
                   </div>
 
                   <span className="drawer-store-title">
@@ -320,6 +460,8 @@ export default function Navbar() {
 
                   <div className="drawer-buttons">
 
+                    {/* CALL STORE */}
+
                     <a
                       href={`tel:+91${STORE_INFO.phonePrimary}`}
                       className="drawer-call-btn"
@@ -328,8 +470,13 @@ export default function Navbar() {
                         size={16}
                         strokeWidth={1.8}
                       />
-                      <span>Call Store</span>
+
+                      <span>
+                        Call Store
+                      </span>
                     </a>
+
+                    {/* WHATSAPP */}
 
                     <a
                       href={getWhatsAppLink()}
@@ -337,33 +484,50 @@ export default function Navbar() {
                       rel="noopener noreferrer"
                       className="drawer-wa-btn"
                     >
-                      <MessageCircle
-                        size={16}
-                        strokeWidth={1.8}
+                      <SiWhatsapp
+                        size={17}
+                        aria-hidden="true"
                       />
-                      <span>WhatsApp</span>
+
+                      <span>
+                        WhatsApp
+                      </span>
                     </a>
 
                   </div>
                 </div>
 
-                {/* SECONDARY PHONE */}
+                {/* ==================================================
+                    SECONDARY PHONE
+                ================================================== */}
+
                 {STORE_INFO.phoneSecondary && (
                   <a
                     href={`tel:+91${STORE_INFO.phoneSecondary}`}
                     className="drawer-secondary-phone"
                   >
                     <Phone size={14} />
-                    <span>{STORE_INFO.phoneSecondary}</span>
+
+                    <span>
+                      {STORE_INFO.phoneSecondary}
+                    </span>
                   </a>
                 )}
 
               </div>
 
-              {/* DRAWER FOOTER */}
+              {/* ==================================================
+                  DRAWER FOOTER
+              ================================================== */}
+
               <div className="drawer-footer">
-                <span>Akhilesh Collection</span>
-                <span>Est. 2026</span>
+                <span>
+                  Akhilesh Collection
+                </span>
+
+                <span>
+                  Est. 2026
+                </span>
               </div>
 
             </motion.aside>

@@ -8,11 +8,10 @@ import { STORE_INFO, getWhatsAppLink } from "@/data/products";
 import {
   Phone,
   MapPin,
-  MessageCircle,
   Instagram,
-  Facebook,
-  Youtube,
 } from "lucide-react";
+
+import { SiWhatsapp } from "react-icons/si";
 
 export default function Footer() {
   return (
@@ -20,6 +19,7 @@ export default function Footer() {
       <div className="container footer-inner">
 
         {/* Brand Column */}
+
         <div className="footer-col brand-col">
           <div className="footer-brand">
             <span className="footer-logo-title">
@@ -38,8 +38,11 @@ export default function Footer() {
           </p>
 
           <div className="footer-socials">
+
+            {/* Instagram */}
+
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/akhileshcollection/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Follow Akhilesh Collection on Instagram"
@@ -48,25 +51,7 @@ export default function Footer() {
               <Instagram size={18} />
             </a>
 
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow Akhilesh Collection on Facebook"
-              className="social-icon-btn"
-            >
-              <Facebook size={18} />
-            </a>
-
-            <a
-              href="https://youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Akhilesh Collection on YouTube"
-              className="social-icon-btn"
-            >
-              <Youtube size={18} />
-            </a>
+            {/* WhatsApp */}
 
             <a
               href={getWhatsAppLink()}
@@ -75,12 +60,14 @@ export default function Footer() {
               aria-label="Connect on WhatsApp"
               className="social-icon-btn"
             >
-              <MessageCircle size={18} />
+              <SiWhatsapp size={18} />
             </a>
+
           </div>
         </div>
 
         {/* Quick Links Column */}
+
         <div className="footer-col">
           <h4 className="footer-heading">
             Quick Links
@@ -114,12 +101,16 @@ export default function Footer() {
         </div>
 
         {/* Contact Information Column */}
+
         <div className="footer-col">
           <h4 className="footer-heading">
             Contact Store
           </h4>
 
           <ul className="footer-contact-list">
+
+            {/* Phone Numbers */}
+
             <li>
               <Phone
                 size={16}
@@ -141,8 +132,10 @@ export default function Footer() {
               </div>
             </li>
 
+            {/* WhatsApp */}
+
             <li>
-              <MessageCircle
+              <SiWhatsapp
                 size={16}
                 className="contact-icon"
               />
@@ -155,10 +148,12 @@ export default function Footer() {
                 WhatsApp Inquiry Available
               </a>
             </li>
+
           </ul>
         </div>
 
         {/* Location Column */}
+
         <div className="footer-col">
           <h4 className="footer-heading">
             Store Location
@@ -190,9 +185,11 @@ export default function Footer() {
             Open in Google Maps →
           </a>
         </div>
+
       </div>
 
       {/* Copyright Bar */}
+
       <div className="footer-bottom-bar">
         <div className="container bottom-bar-inner">
 
@@ -200,44 +197,57 @@ export default function Footer() {
             © 2026 {STORE_INFO.name}. All Rights Reserved.
           </p>
 
-          <p className="footer-tag-right">
-  Designed &amp; developed by{" "}
-  <a
-    href="https://www.linkedin.com/in/tanishk-patidar-663b53378"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="footer-credit-link"
-  >
-    Tanishk Patidar
-  </a>
-  {", "}
-  <a
-    href="SHIVAM_LINKEDIN_URL"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="footer-credit-link"
-  >
-    Shivam Singh
-  </a>
-  {", "}
-  <a
-    href="YASH_SONI_LINKEDIN_URL"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="footer-credit-link"
-  >
-    Yash Soni
-  </a>
-  {" & "}
-  <a
-    href="YASH_BASWAL_LINKEDIN_URL"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="footer-credit-link"
-  >
-    Yash Baswal
-  </a>
-</p>
+          <p
+            className="footer-tag-right"
+            style={{
+              color: "#A8A8A8",
+              transform: "translateX(-25px)",
+            }}
+          >
+            Designed &amp; developed by{" "}
+
+            <a
+              href="https://www.linkedin.com/in/tanishk-patidar-663b53378"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-credit-link"
+            >
+              Tanishk Patidar
+            </a>
+
+            {", "}
+
+            <a
+              href="https://www.linkedin.com/in/shivam-singh-52a739384"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-credit-link"
+            >
+              Shivam Singh
+            </a>
+
+            {", "}
+
+            <a
+              href="http://localhost:3000/YASH_SONI_LINKEDIN_URL"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-credit-link"
+            >
+              Yash Soni
+            </a>
+
+            {" & "}
+
+            <a
+              href="http://localhost:3000/YASH_BASWAL_LINKEDIN_URL"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-credit-link"
+            >
+              Yash Baswal
+            </a>
+          </p>
 
         </div>
       </div>

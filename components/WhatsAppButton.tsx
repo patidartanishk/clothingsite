@@ -1,7 +1,10 @@
 ﻿"use client";
 
 import React, { useState, useEffect } from "react";
-import { MessageCircle, ArrowUp } from "lucide-react";
+
+import { ArrowUp } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
+
 import { getWhatsAppLink } from "@/data/products";
 
 export default function WhatsAppButton() {
@@ -12,7 +15,9 @@ export default function WhatsAppButton() {
       setShowBackToTop(window.scrollY > 400);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -28,7 +33,9 @@ export default function WhatsAppButton() {
 
   return (
     <div className="floating-actions-desktop desktop-only">
+
       {/* Back to Top */}
+
       {showBackToTop && (
         <button
           type="button"
@@ -42,6 +49,7 @@ export default function WhatsAppButton() {
       )}
 
       {/* Floating WhatsApp */}
+
       <a
         href={getWhatsAppLink()}
         target="_blank"
@@ -52,12 +60,16 @@ export default function WhatsAppButton() {
       >
         <span className="wa-pulse-ring" />
 
-        <MessageCircle size={24} />
+        <SiWhatsapp
+          size={24}
+          aria-hidden="true"
+        />
 
         <span className="wa-tooltip">
           Inquire on WhatsApp
         </span>
       </a>
+
     </div>
   );
 }

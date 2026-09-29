@@ -1,4 +1,10 @@
-﻿/* styles/clothing.css */
+﻿/* =========================================================
+   AKHILESH COLLECTION — CLOTHING PAGE
+   ========================================================= */
+
+/* =========================================================
+   CATEGORY PAGE HERO
+   ========================================================= */
 
 .category-page-hero {
   position: relative;
@@ -60,7 +66,10 @@
   object-position: top center;
 }
 
-/* Category Filters Bar */
+/* =========================================================
+   CATEGORY FILTERS BAR
+   ========================================================= */
+
 .filter-bar-sticky {
   position: sticky;
   top: 76px;
@@ -106,9 +115,13 @@
 }
 
 .filter-pill.active {
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: var(--text-primary);
 }
+
+/* =========================================================
+   CATALOG COUNT
+   ========================================================= */
 
 .catalog-count-row {
   margin-bottom: 24px;
@@ -121,7 +134,10 @@
   letter-spacing: 0.06em;
 }
 
-/* Catalog Product Grid */
+/* =========================================================
+   CATALOG PRODUCT GRID
+   ========================================================= */
+
 .catalog-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -143,11 +159,119 @@
   }
 }
 
+/* =========================================================
+   IMAGE-ONLY PRODUCT CARDS
+   ========================================================= */
+
+.catalog-grid-image-only {
+  align-items: stretch;
+}
+
+.catalog-image-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+}
+
+.catalog-image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+}
+
+.catalog-image-box img {
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.catalog-image-card:hover .catalog-image-box img {
+  transform: scale(1.03);
+}
+
+/* =========================================================
+   NO PRODUCTS
+   ========================================================= */
+
 .no-products-box {
   grid-column: 1 / -1;
   text-align: center;
   padding: 80px 20px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 1px dashed var(--border-light);
   border-radius: var(--radius-md);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .category-page-hero {
+    padding: 60px 0 40px;
+  }
+
+  .category-hero-grid {
+    gap: 28px;
+  }
+
+  .category-hero-text h1 {
+    font-size: 2.6rem;
+  }
+
+  .category-hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .category-hero-image-box {
+    height: 240px;
+  }
+
+  .filter-bar-sticky {
+    top: 64px;
+    padding: 12px 0;
+    margin-bottom: 28px;
+  }
+
+  .filter-pill {
+    padding: 8px 16px;
+    font-size: 0.72rem;
+  }
+
+  .catalog-count-row {
+    margin-bottom: 20px;
+    font-size: 0.7rem;
+    gap: 20px;
+  }
+
+  .catalog-grid {
+    gap: 12px;
+    margin-bottom: 60px;
+  }
+
+  .catalog-image-box {
+    aspect-ratio: 1 / 1.15;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .category-hero-text h1 {
+    font-size: 2.35rem;
+  }
+
+  .category-hero-image-box {
+    height: 210px;
+  }
+
+  .catalog-grid {
+    gap: 10px;
+  }
 }
