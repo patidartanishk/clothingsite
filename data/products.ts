@@ -16,7 +16,7 @@ export const STORE_INFO = {
   location: "Main Market, Subheda, Barwahi",
   phonePrimary: "9956690680",
   phoneSecondary: "7007406127",
-  whatsappNumber: "919956690680",
+  whatsappNumber: "7007406127",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Main+Market+Subheda+Barwahi",
   openingNote: "Visit our showroom at Main Market, Subheda, Barwahi to experience the complete collection in person."
 };
