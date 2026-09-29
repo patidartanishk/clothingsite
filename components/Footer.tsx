@@ -201,16 +201,43 @@ export default function Footer() {
           </p>
 
           <p className="footer-tag-right">
-            Designed &amp; developed by{" "}
-            <a
-              href="https://www.linkedin.com/in/tanishk-patidar-663b53378"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-credit-link"
-            >
-              Tanishk Patidar
-            </a>
-          </p>
+  Designed &amp; developed by{" "}
+  <a
+    href="https://www.linkedin.com/in/tanishk-patidar-663b53378"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="footer-credit-link"
+  >
+    Tanishk Patidar
+  </a>
+  {", "}
+  <a
+    href="SHIVAM_LINKEDIN_URL"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="footer-credit-link"
+  >
+    Shivam Singh
+  </a>
+  {", "}
+  <a
+    href="YASH_SONI_LINKEDIN_URL"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="footer-credit-link"
+  >
+    Yash Soni
+  </a>
+  {" & "}
+  <a
+    href="YASH_BASWAL_LINKEDIN_URL"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="footer-credit-link"
+  >
+    Yash Baswal
+  </a>
+</p>
 
         </div>
       </div>
