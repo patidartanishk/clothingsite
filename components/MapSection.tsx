@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import React from "react";
+
 import { motion } from "framer-motion";
 
 import {
@@ -35,7 +36,6 @@ export default function MapSection() {
           }}
         >
           {/* Left Column: Store Information Card */}
-
           <div className="map-store-info-col">
             <span className="eyebrow">
               FIND US ON THE MAP
@@ -75,6 +75,7 @@ export default function MapSection() {
             <div className="map-contact-chips">
               <div className="contact-chip">
                 <Phone size={15} />
+
                 <span>
                   +91 {STORE_INFO.phonePrimary}
                 </span>
@@ -82,6 +83,7 @@ export default function MapSection() {
 
               <div className="contact-chip">
                 <Phone size={15} />
+
                 <span>
                   +91 {STORE_INFO.phoneSecondary}
                 </span>
@@ -113,22 +115,21 @@ export default function MapSection() {
           </div>
 
           {/* Right Column: Google Map Embed / Canvas */}
-
           <div className="map-embed-wrapper">
             <iframe
-              title="Akhilesh Collection Google Maps Location"
-              src="https://maps.google.com/maps?q=Main+Market+Subeha+Barabanki&t=&z=14&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="100%"
-              style={{
-                border: 0,
-                minHeight: "420px",
-                display: "block",
-              }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+  title="Akhilesh Garments Subeha - Google Maps Location"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207.2224986431141!2d81.51564680617668!3d26.63834331698732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bcd2b17fc4195%3A0xf3a83ec96795b3ff!2sAkhilesh%20Garments%20subeha!5e1!3m2!1sen!2sin!4v1790744891357!5m2!1sen!2sin"
+  width="100%"
+  height="100%"
+  style={{
+    border: 0,
+    minHeight: "420px",
+    display: "block",
+  }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="strict-origin-when-cross-origin"
+/>
 
             <a
               href={STORE_INFO.mapsUrl}
