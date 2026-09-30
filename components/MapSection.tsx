@@ -117,7 +117,7 @@ export default function MapSection() {
           <div className="map-embed-wrapper">
             <iframe
               title="Akhilesh Collection Google Maps Location"
-              src="https://maps.google.com/maps?q=Main+Market+Subeha+Barwahi&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=Main+Market+Subeha+Barabanki&t=&z=14&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{
